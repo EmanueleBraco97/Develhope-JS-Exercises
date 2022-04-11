@@ -1,6 +1,8 @@
-const person = {
-  // ...
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
 }
 
-console.log(john.fullName()); // John Doe
-console.log(simon.fullName()); // Simon Collins
+const john = new Person("Jhon", "Doe");
+
+console.log(john); // John Doe

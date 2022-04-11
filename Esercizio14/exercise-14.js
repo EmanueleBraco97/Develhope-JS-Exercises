@@ -1,5 +1,5 @@
 function greet(greeting) {
-  // ...
+
 }
 
 const greetWithHello = greet('Hello');

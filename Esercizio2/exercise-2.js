@@ -1,13 +1,13 @@
 function canPlay() {
-  let personName = 'Paul';
+    const personName = 'Paul'; //Assegnata una costante
 
-  if (true) {
-    personName = 'George'; // Argh! Voglio che personName sia una variabile di sola lettura
-  }
+    if (true) {
+        personName = 'George'; // Argh! Voglio che personName sia una variabile di sola lettura
+    }
 
-  personName += ' plays football';
+    personName += ' plays football';
 
-  console.log(personName);
+    console.log(personName);
 }
 
 canPlay();
