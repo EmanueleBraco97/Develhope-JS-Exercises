@@ -1,5 +1,4 @@
 function greet(greeting) {
-     const a=2;
     return function(name){
         return greeting + ' ' + name;
     }
