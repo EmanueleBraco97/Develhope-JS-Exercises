@@ -5,7 +5,12 @@ class Person {
     this.lastName = lastName;
     this.age = age;
   }
+  
 }
 
 const developer = new Person(1, 'Mario', 'Rossi', 25);
+
+const jsonDeveloper= JSON.stringify(developer);
 // Print developer as json object
+
+console.log(jsonDeveloper);

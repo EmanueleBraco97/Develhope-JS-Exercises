@@ -6,5 +6,7 @@ const person = {
 };
 
 for (let item of Object.entries(person)) {
-  console.log(`${item[0]}: ${item[1]}`);
+  let[chiave, valore] = item;
+  console.log(chiave + ':' + valore);
 }
+
