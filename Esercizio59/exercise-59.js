@@ -23,7 +23,7 @@ function fetchPersonById(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const person = persons.find(item => item.id === id);
-      
+
       if (person) {
         return resolve(JSON.stringify(person));
       }
@@ -33,4 +33,13 @@ function fetchPersonById(id) {
   });
 }
 
+// fetchPersonById(1).then(response => console.log(typeof response)); //STRING//
 // core here
+
+fetchPersonById(1).then(
+  response => JSON.parse(response)
+).then(
+  person => console.log(person)
+).catch(
+  err => console.log(err)
+);
