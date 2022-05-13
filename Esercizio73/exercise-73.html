@@ -1,0 +1,47 @@
+<html>
+
+<body>
+  <div id="container">
+    <h2>Person's List</h2>
+    <table id="person-table">
+      <thead>
+        <tr>
+          <th>firstName</th>
+          <th>lastName</th>
+          <th>age</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button id="add-row" onclick="addRow()">Add row</button>
+  </div>
+</body>
+
+</html>
+
+<script>
+  // code here
+  function addRow() {
+    let tr = document.createElement('tr');
+    for (let i = 0; i < 3; i++) {
+      let th = document.createElement('th');
+      let input = document.createElement('input')
+
+      if (i == 0) {
+        input.setAttribute('placeholder', 'firstName');
+      }
+      if (i == 1) {
+        input.setAttribute('placeholder', 'lastName');
+      }
+      if (i == 2) {
+        input.setAttribute('placeholder', 'age');
+      }
+      th.appendChild(input);
+      tr.appendChild(th);
+    }
+    
+    let tbody = document.querySelector('tbody');
+    tbody.appendChild(tr);
+
+  }
+</script>
