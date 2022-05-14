@@ -1,0 +1,33 @@
+<html>
+
+<body>
+  <div id="container">
+    <ul class="todo-list"></ul>
+  </div>
+</body>
+
+</html>
+
+<script>
+  // code here
+  let ul = document.querySelector("ul"); //scope globale//
+  let arrTodos = [];
+
+  function reCall() {
+    fetch('https://jsonplaceholder.typicode.com/todos') //effettuiamo chiamata//
+      .then(response => {
+        return response.json()   //recuperiamo body , (response=body) e lo 'trasformiamo' in json//
+      })
+      .then(data => { //con i 2 metodi then gestiamo la chiamata/risposta
+        arrTodos = data;
+        console.log(arrTodos);
+
+        arrTodos.forEach((todo) => {
+          let li = document.createElement("li");
+          li.innerHTML = todo.title; //con INNERHTML inseriamo codice HTML nell'elemento che stiamo applicando//
+          ul.append(li);
+        });
+      })
+  }
+  reCall();
+</script>
