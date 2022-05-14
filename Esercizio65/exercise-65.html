@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <div id="container">
+      <button type="button" id="fetch-post" onclick="post()"> <!--richiamo funzione-->
+        Fetch Post from LocalStorage
+      </button>
+
+      <h2>Post: <span id="post-title"></span></h2>
+    </div>
+  </body>
+</html>
+
+<script>
+   // code here
+  function post(){ //implemento funzione
+    let recuperoPost= document.getElementById('fetch-post'); //RECUPERO
+
+    let postTitle= document.getElementById('post-title')
+    postTitle.innerText=localStorage.getItem('post')
+  }
+</script>
