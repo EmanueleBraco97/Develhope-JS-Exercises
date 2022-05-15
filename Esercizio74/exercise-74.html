@@ -1,0 +1,74 @@
+<html>
+<body>
+  <div id="container">
+    <h2>Person's Form</h2>
+    <form id="person-form">
+      <button type="submit" onclick="submitPersonForm()">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+
+
+<script>
+  // Code here
+
+
+  //da errore nel terminale 'SyntaxError: Unexpected token '<''//
+
+  function submitPersonForm(){
+    event.preventDefault(); //preveniamo evento di default//
+
+    let person = { //creiamo oggetto person come dice traccia//
+    firstName: "",
+    lastName: "",
+    age: "",
+  };
+
+  person.firstName= document.getElementById('firstname');
+  person.lastName= document.getElementById('lastname');
+  person.age= document.getElementById('age');
+
+
+    console.log(person);
+  }
+
+
+
+  let form = document.getElementById('person-form');
+
+  function initForm() {
+    let labelFn = document.createElement('label');
+    labelFn.for = 'firstName'
+    let inputFirstName = document.createElement('input');
+    inputFirstName.type = 'text';
+    inputFirstName.id= 'firstName'
+    inputFirstName.setAttribute('placeholder', 'firstName');
+
+    let labelLn = document.createElement('label');
+    labelLn.for= 'lastname'
+    let inputLastName = document.createElement('input');
+    inputLastName.type = 'text';
+    inputLastName.id= 'lastName'
+    inputLastName.setAttribute('placeholder', 'lastName');
+
+    let labelAge = document.createElement('label');
+    labelAge.for= 'age'
+    let inputAge = document.createElement('input');
+    inputAge.type = 'number';
+    inputAge.id= 'age';
+    inputAge.setAttribute('placeholder', 'age');
+
+    let form = document.getElementById("person-form")
+
+    form.prepend(labelAge);
+    form.prepend(inputAge);
+
+    form.prepend(labelLn);
+    form.prepend(inputLastName);
+
+    form.prepend(labelFn);
+    form.prepend(inputFirstName);
+  }
+  initForm()
+</script>
